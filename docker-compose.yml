@@ -1,0 +1,11 @@
+postgres:
+  image: training/postgres
+  ports:
+    - "5432:5432"
+
+play:
+  build: .
+  links:
+    - postgres
+  ports:
+    - "9000:9000"
