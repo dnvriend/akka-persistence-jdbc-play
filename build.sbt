@@ -13,8 +13,10 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-	"com.github.dnvriend" %% "akka-persistence-jdbc" % "1.1.1",
-	"org.postgresql"       % "postgresql"            % "9.4-1201-jdbc41"
+	"com.github.dnvriend" %% "akka-persistence-jdbc"                    % "1.1.2-SNAPSHOT",
+	"com.github.dnvriend" %% "akka-persistence-jdbc-serialization-json" % "1.0.0-SNAPSHOT",
+  "io.spray"            %% "spray-json"                               % "1.3.1",
+	"org.postgresql"       % "postgresql"                               % "9.4-1201-jdbc41"
 )
 
 resolvers += "dnvriend at bintray" at "http://dl.bintray.com/dnvriend/maven"

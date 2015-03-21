@@ -50,7 +50,8 @@ class CounterActor extends PersistentActor with ActorLogging {
   override def receiveCommand: Receive = {
     case msg @ BumpCounter =>
       log.info("(RECEIVE_COMMAND): {}", msg)
-      persist(CounterChanged(counter + 1))(updateState)
+      val event = CounterChanged(counter + 1)
+      persist(event)(updateState)
 
     case msg @ ResetCounter =>
       log.info("(RECEIVE_COMMAND): {}", msg)
